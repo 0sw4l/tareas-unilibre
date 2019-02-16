@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block active_home %}
+    active
+{% endblock %}
+{% block main %}
+<div class="container">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="jumbotron">
+            <h1>
+                Funciona :D!
+                <i class="fa fa-heart color-red"></i>
+                <i class="fa fa-usd color-green"></i>
+                <i class="fa fa-cog fa-spin color-teal"></i>
+            </h1>
+        </div>
+    </div>
+</div>
+<div class="container" align="center">
+    <div class="col-md-6">
+        <a href="{% url 'listas' %}" class="btn btn-info btn-lg">
+            Ver las listas
+            <i class="fa fa-list"></i>
+        </a>
+    </div>
+    <div class="col-md-6">
+        <a href="{% url 'items' %}" class="btn btn-success btn-lg">
+            Ver los items
+            <i class="fa fa-cube"></i>
+        </a>
+    </div>
+</div>
+{% endblock %}

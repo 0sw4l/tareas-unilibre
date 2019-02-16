@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block main %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h2 class="text-left">
+                    {{ action }} {{ kind }}
+                </h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form method="post">{% csrf_token %}
+                    {% for field in form %}
+                        <div class="form-group">
+                        {{ field.label }}
+                        {% render_field field class='form-control' %}
+                        </div>
+                    {% endfor %}
+
+                    <button type="submit" class="btn btn-success">
+                        <i class="fa fa-save"></i> Guardar Registro
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
